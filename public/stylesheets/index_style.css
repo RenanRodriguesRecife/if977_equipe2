@@ -1,0 +1,30 @@
+@CHARSET "UTF-8";
+
+#index_menu {
+    background-color: #0000FF;
+    padding: 10px;
+    color: white;   
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 40px;
+}
+
+#index_content {
+    background-color: #FF0000;
+    padding: 10px;
+    width: 100%;
+    text-align: center;
+    height: 1000px;
+    color: white;
+    position: relative;
+}
+
+#index_bottom {
+    background-color: #00FF00;
+    color: black;
+    padding: 10px;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+}
