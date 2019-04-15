@@ -13,3 +13,18 @@
  *= require_tree .
  *= require_self
  */
+﻿
+/* Reset */ 
+* {
+	padding:0;
+	margin:0;
+	vertical-align:baseline;
+	list-style:none;
+	border:0
+}
+
+body {
+  background-color: #CDDFA0;
+  font-family: Roboto;
+}
+
