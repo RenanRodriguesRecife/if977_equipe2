@@ -28,3 +28,14 @@ body {
   font-family: Roboto;
 }
 
+nav {
+/* Posição do navbar */
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+
+/* Estilo NavBar */
+    background-color: RGB(38,41,39,29);
+    padding: 1rem;
+}
