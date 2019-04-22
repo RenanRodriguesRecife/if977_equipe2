@@ -38,9 +38,6 @@
 | Criação de Testes | Pedro |
 | Criação do CRUD | Time |
 | Criação de tela de login | Time |
-## Em andamento 
-| Ação | Responsável(eis) |
-|----------|----------|
 ## Planejamento para Sprint 2
 | Ação | Responsável(eis) |
 |----------|----------|
