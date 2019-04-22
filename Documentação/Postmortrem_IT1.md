@@ -28,9 +28,6 @@
 | Criação do minimundo | Jhonata |
 | Criação do modelo ER | Renan |
 | Criação do modelo Lógico | Renan |
-## Realizadas não planejadas na Iteração 1
-| Ação | Responsável(eis) |
-|----------|----------|
 ## Não realizadas na Iteração 1
 | Ação | Responsável(eis) |
 |----------|----------|
