@@ -10,9 +10,9 @@ default: &default
   timeout: 5000
   encoding: SQL_ASCII
   username: accessiblelife
- # password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
-  
-
+#  password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
+  password: 123456789 
+#  host: <%= ENV['ACCESSIBLELIFE_DATABASE_HOST'] || 'localhost' %>
 
 development:
   <<: *default
@@ -29,4 +29,4 @@ production:
   <<: *default
   database: accessiblelife_production
   username: accessiblelife
-  password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
+  
