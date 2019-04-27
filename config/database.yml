@@ -8,7 +8,9 @@ default: &default
   adapter: postgresql
   pool: 5
   timeout: 5000
-  encoding: unicode
+  encoding: SQL_ASCII
+  
+  password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
   
 
 
