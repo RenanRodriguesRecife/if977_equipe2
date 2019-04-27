@@ -1,2 +1,3 @@
 class Person < ApplicationRecord
-end
+has_many :complaint
+end  
