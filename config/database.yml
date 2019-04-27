@@ -9,8 +9,8 @@ default: &default
   pool: 5
   timeout: 5000
   encoding: SQL_ASCII
-  
-  password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
+  username: accessiblelife
+ # password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
   
 
 
