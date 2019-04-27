@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  description: MyText
+  latitude: 1.5
+  longitude: 1.5
+  date: 2019-04-27 17:43:40
+
+two:
+  description: MyText
+  latitude: 1.5
+  longitude: 1.5
+  date: 2019-04-27 17:43:40
