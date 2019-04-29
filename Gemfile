@@ -49,6 +49,8 @@ group :development, :test do
 end
 gem 'web-console', group: :development
 group :production do
+
+
   # Access an IRB console on exception pages or by using <%= console %> anywhere in the code.
   gem 'pg', '~> 0.21'
   
