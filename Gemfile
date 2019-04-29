@@ -64,3 +64,10 @@ gem 'rails_12factor'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #login
 gem 'devise'
+
+group :test do
+  gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+end
