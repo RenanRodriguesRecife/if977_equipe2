@@ -5,9 +5,9 @@ Funcionalidade: login Funcionalidade
 
 Cenário: Login com email e senha correto
     Dado Eu navego para pagina de Login
-    E Eu digito no Login
+    E Eu digito as credenciais
     | email | senha |
     | loginteste@teste.com | testeteste |  
     Quando Eu clico no botão Log In
-    Então  Eu devo ver a tela inicial
+    Então Eu devo ver a tela inicial
 

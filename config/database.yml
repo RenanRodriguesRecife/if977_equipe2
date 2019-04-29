@@ -11,7 +11,7 @@ default: &default
   encoding: SQL_ASCII
   username: accessiblelife
 #  password: <%= ENV['ACCESSIBLELIFE_DATABASE_PASSWORD'] %>
-  password: 123456789 
+  password: 123456789
 #  host: <%= ENV['ACCESSIBLELIFE_DATABASE_HOST'] || 'localhost' %>
 
 development:
