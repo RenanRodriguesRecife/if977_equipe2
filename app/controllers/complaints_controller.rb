@@ -32,8 +32,12 @@ class ComplaintsController < ApplicationController
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
         format.json { render :show, status: :created, location: @complaint }
       else
-        format.html { render :new }
-        format.json { render json: @complaint.errors, status: :unprocessable_entity }
+        format.html { redirect_to Person }
+    
+        
+        
+        #format.html { render :new }
+        #format.json { render json: @complaint.errors, status: :unprocessable_entity }
       end
     end
   end

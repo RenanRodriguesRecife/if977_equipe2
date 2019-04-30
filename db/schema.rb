@@ -18,12 +18,8 @@ ActiveRecord::Schema.define(version: 20190429233916) do
   create_table "comments", force: :cascade do |t|
     t.text     "description"
     t.datetime "data"
-    t.integer  "complaint_id"
-    t.integer  "person_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["complaint_id"], name: "index_comments_on_complaint_id", using: :btree
-    t.index ["person_id"], name: "index_comments_on_person_id", using: :btree
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
   end
 
   create_table "complaints", force: :cascade do |t|
@@ -31,22 +27,9 @@ ActiveRecord::Schema.define(version: 20190429233916) do
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "date"
-    t.integer  "person_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-<<<<<<< HEAD
     t.string   "photo"
-=======
-    t.index ["person_id"], name: "index_complaints_on_person_id", using: :btree
->>>>>>> 41cf7643e5d4483737ad47923b7adae0528361b1
-  end
-
-  create_table "people", force: :cascade do |t|
-    t.string   "nome"
-    t.string   "endereco"
-    t.integer  "cpf"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
