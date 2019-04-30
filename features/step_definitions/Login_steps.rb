@@ -2,9 +2,15 @@
 
 Dado("que eu tenha registro") do
     visit("/users/sign_up")
-    fill_in("user_email", :with => "teste@teste.com")
-    fill_in("user_password", :with => "teste1")
-    fill_in("user_password_confirmation", :with => "teste1")
+end
+
+E("o login seja {string}") do |email|
+    fill_in("user_email", :with => email)
+end
+
+E("a senha seja {string}") do |password|
+    fill_in("user_password", :with => password)
+    fill_in("user_password_confirmation", :with => password)
     click_button("Sign up")
 end
 

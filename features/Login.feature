@@ -5,6 +5,8 @@ Funcionalidade: Logar com usuario e senha
 
 Contexto:
     Dado que eu tenha registro
+    E o login seja "teste@teste.com"
+    E a senha seja "teste1"
 
 Cenário: Login com email e senha corretos
     Dado que eu navego para a pagina de login
