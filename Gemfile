@@ -46,6 +46,11 @@ group :development, :test do
   gem 'listen', '~> 3.0.5'
   gem 'byebug', platform: :mri
   
+  gem 'cucumber-rails', require: false
+  gem 'rspec-rails'
+  # database_cleaner is not required, but highly recommended
+  gem 'database_cleaner'
+  
 end
 gem 'web-console', group: :development
 group :production do
