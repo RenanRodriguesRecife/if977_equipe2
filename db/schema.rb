@@ -34,11 +34,8 @@ ActiveRecord::Schema.define(version: 20190429233916) do
     t.integer  "person_id"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-<<<<<<< HEAD
     t.string   "photo"
-=======
     t.index ["person_id"], name: "index_complaints_on_person_id", using: :btree
->>>>>>> 41cf7643e5d4483737ad47923b7adae0528361b1
   end
 
   create_table "people", force: :cascade do |t|
