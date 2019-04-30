@@ -30,6 +30,10 @@ ActiveRecord::Schema.define(version: 20190429233916) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "photo"
+<<<<<<< HEAD
+=======
+    t.index ["person_id"], name: "index_complaints_on_person_id", using: :btree
+>>>>>>> 3575b3afd50ea43d61988e621af00c5b61c9da3f
   end
 
   create_table "users", force: :cascade do |t|

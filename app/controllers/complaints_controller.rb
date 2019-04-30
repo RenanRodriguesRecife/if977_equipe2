@@ -33,11 +33,14 @@ class ComplaintsController < ApplicationController
         format.json { render :show, status: :created, location: @complaint }
       else
         format.html { redirect_to Person }
+<<<<<<< HEAD
     
         
         
         #format.html { render :new }
         #format.json { render json: @complaint.errors, status: :unprocessable_entity }
+=======
+>>>>>>> 3575b3afd50ea43d61988e621af00c5b61c9da3f
       end
     end
   end
