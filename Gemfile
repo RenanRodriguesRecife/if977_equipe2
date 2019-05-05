@@ -69,6 +69,7 @@ gem 'rails_12factor'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #login
 gem 'devise'
+gem 'bcrypt'
 
 group :test do
   gem 'cucumber-rails', require: false

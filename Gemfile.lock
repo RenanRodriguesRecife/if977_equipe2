@@ -246,6 +246,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  bcrypt
   byebug
   carrierwave-postgresql
   coffee-rails (~> 4.2)

@@ -30,22 +30,6 @@ ActiveRecord::Schema.define(version: 20190429233916) do
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.string   "photo"
-<<<<<<< HEAD
-=======
-    t.index ["person_id"], name: "index_complaints_on_person_id", using: :btree
->>>>>>> 3575b3afd50ea43d61988e621af00c5b61c9da3f
-  end
-
-  create_table "users", force: :cascade do |t|
-    t.string   "email",                  default: "", null: false
-    t.string   "encrypted_password",     default: "", null: false
-    t.string   "reset_password_token"
-    t.datetime "reset_password_sent_at"
-    t.datetime "remember_created_at"
-    t.datetime "created_at",                          null: false
-    t.datetime "updated_at",                          null: false
-    t.index ["email"], name: "index_users_on_email", unique: true, using: :btree
-    t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
 end
