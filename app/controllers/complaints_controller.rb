@@ -1,6 +1,5 @@
 class ComplaintsController < ApplicationController
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!, except: [:index]
 
   # GET /complaints
   # GET /complaints.json
@@ -32,15 +31,9 @@ class ComplaintsController < ApplicationController
         format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
         format.json { render :show, status: :created, location: @complaint }
       else
-        format.html { redirect_to Person }
-<<<<<<< HEAD
-    
-        
-        
-        #format.html { render :new }
-        #format.json { render json: @complaint.errors, status: :unprocessable_entity }
-=======
->>>>>>> 3575b3afd50ea43d61988e621af00c5b61c9da3f
+        format.html { render :new }
+        format.json { render json: @complaint.errors, status: :unprocessable_entity }
+
       end
     end
   end

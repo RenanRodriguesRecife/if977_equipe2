@@ -41,6 +41,10 @@ gem 'carrierwave-postgresql'
 #GEM LEITURA IMAGEM
 gem 'postgresql_lo_streamer'
 
+
+gem 'bulma-rails', '~> 0.6.1'
+gem 'simple_form', '~> 3.5'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'listen', '~> 3.0.5'
@@ -51,6 +55,9 @@ group :development, :test do
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
   
+  gem 'better_errors', '~> 2.4'
+  gem 'guard', '~> 2.14', '>= 2.14.1'
+  gem 'guard-livereload', '~> 2.5', '>= 2.5.2', require: false
 end
 gem 'web-console', group: :development
 group :production do
