@@ -5,7 +5,7 @@
   * Pedro Henrique Alves Cruz;
   * Matheus Andrade Gomes;
   * Renan Stephano Barbosa de Souza Rodrigues;
-  * Antonio 
+  * Antonio Almeida da Silva Neto;
 ## Objetivos
 * Continuação do desenvolvimento e finalização de atividades do Sprint 2.
 ## Planejamento da Iteração 2
@@ -22,7 +22,7 @@
 ## Realizadas na Iteração 2
 | Ação | Responsável(eis) |
 |----------|----------|
-| Criação de testes | Jhonata Pedro |
+| Criação de testes | Jhonata Antônio |
 | Criação de HU's | Jhonata Pedro |
 | Criação do CRUD | Time |
 | Criação de tela de login | Time |
