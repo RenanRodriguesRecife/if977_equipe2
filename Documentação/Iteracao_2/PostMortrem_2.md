@@ -37,7 +37,13 @@
 ## Planejamento para Sprint 3
 | Ação | Responsável(eis) |
 |----------|----------|
-| 
+| Criação de fórmulário de denúncia | Pedro |
+| Criação de tela de listagem das denúncias | Renan |
+| Estudo da API google Maps| Time |
+| Uso da API do google Maps | Jhonata |
+| Criação do ranking | Matheus |
+| Implementação de curtidas | Pedro |
+| Implementação de comentários | Antonio |
 
 ## Lições Aprendidas
 * Fazer mais reuniões e melhorar comunicação com o time
