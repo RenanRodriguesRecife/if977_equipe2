@@ -18,7 +18,6 @@
 | Criação do modelo ER | Renan |
 | Criação do modelo Lógico | Renan |
 | Criação do CRUD | Time |
-
 | Criação de tela de login | Time |
 ## Realizadas na Iteração 1
 | Ação | Responsável(eis) |

@@ -4,7 +4,7 @@ class CreateComments < ActiveRecord::Migration[5.0]
       t.text :description
       t.datetime :data
       t.references :complaint
-      t.references :person
+      t.references :user
 
       t.timestamps
     end
