@@ -5,4 +5,6 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          
   has_many :complaint
+  
+  mount_uploader :user_photo, LocationPhotoUploader
 end
