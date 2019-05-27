@@ -15,7 +15,7 @@ class ComplaintsController < ApplicationController
 
   # GET /complaints/new
   def new
-    @complaint = Complaint.new
+    @complaint = current_user.complaint.build
   end
 
   # GET /complaints/1/edit
@@ -25,7 +25,7 @@ class ComplaintsController < ApplicationController
   # POST /complaints
   # POST /complaints.json
   def create
-    @complaint = current_user.complaint.new(complaint_params)
+    @complaint = current_user.complaint.build(complaint_params)
 
     respond_to do |format|
       if @complaint.save

@@ -1,0 +1,6 @@
+<p> Nome: <%= @user.email %> </p>
+<p> Email: <%= @user.email %> </p>
+<p> Reclamacoes: </p>
+<%= @user_complaints.each do |comp| %>
+    <p> <%= link_to comp.description, complaint_path(comp) %> <p>
+<% end %>
