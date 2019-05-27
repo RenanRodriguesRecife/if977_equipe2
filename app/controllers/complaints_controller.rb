@@ -1,4 +1,5 @@
 class ComplaintsController < ApplicationController
+  before_action :authenticate_user!, except: [:index]
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
 
   # GET /complaints
@@ -24,7 +25,7 @@ class ComplaintsController < ApplicationController
   # POST /complaints
   # POST /complaints.json
   def create
-    @complaint = Complaint.new(complaint_params)
+    @complaint = current_user.complaint.new(complaint_params)
 
     respond_to do |format|
       if @complaint.save
