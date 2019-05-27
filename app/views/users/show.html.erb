@@ -1,6 +1,10 @@
-<p> Nome: <%= @user.email %> </p>
+<p> Nome: <%= @user.first_name %> </p>
 <p> Email: <%= @user.email %> </p>
+<p>
+  <strong>Photo:</strong>
+  <%= image_tag @user.user_photo %>
+</p>
 <p> Reclamacoes: </p>
-<%= @user_complaints.each do |comp| %>
-    <p> <%= link_to comp.description, complaint_path(comp) %> <p>
+<% @user_complaints.each do |comp| %>
+    <p> [ <%= link_to comp.description, complaint_path(comp) %> ] <p>
 <% end %>
