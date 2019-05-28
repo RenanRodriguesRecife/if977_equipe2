@@ -1,33 +1,100 @@
-<p id="notice"><%= notice %></p>
 
-<h1>Complaints</h1>
 
-<table>
+<div class="container">
+<h3>Em Alta</h3>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img class="d-block w-100" src="..." alt="First slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Second slide">
+    </div>
+    <div class="carousel-item">
+      <img class="d-block w-100" src="..." alt="Third slide">
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+
+
+<div class="container">
+<h3>Ultimas</h3>
+<table class="table">
   <thead>
     <tr>
-      <th>Description</th>
-      <th>Latitude</th>
-      <th>Longitude</th>
-      <th>Date</th>
+      <th scope="col">id</th>
+      <th scope="col">Description</th>
+      <th scope="col">Latitude</th>
+      <th scope="col">Longitude</th>
+      <th scope="col">Date</th>
       <th colspan="3"></th>
     </tr>
   </thead>
-
   <tbody>
-    <% @complaints.each do |complaint| %>
-      <tr>
-        <td><%= complaint.description %></td>
-        <td><%= complaint.latitude %></td>
-        <td><%= complaint.longitude %></td>
-        <td><%= complaint.date %></td>
-        <td><%= link_to 'Show', complaint %></td>
-        <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
-        <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
+  <% @complaints.each do |complaint| %>
+    <tr>
+      <th scope="row"></th>
+      <td><%= complaint.description %></td>
+      <td><%= complaint.latitude %></td>
+      <td><%= complaint.longitude %></td>
+      <td><%= complaint.date %></td>
+      <td><%= link_to 'Show', complaint %></td>
+      <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
+      <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td> <!-- Botão para acionar modal -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
+            Modal 
+        </button></td>
+      <td> 
+        <button type="button" class="btn btn-danger">Curtir</button></td>
+    </tr>
+    
+    
+    
+
+<!-- Modal -->
+<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+       
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+      </div>
+    </div>
+  </div>
+</div>
+   <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
 
-<%= link_to 'New Complaint', new_complaint_path %>
+<div class="position-fixed">
+<button type="button" class="btn btn-success">
+<%= link_to 'Reclame Aqui', new_complaint_path %>
+</button>
+</div>
+
+
+<div class="container">
+<div  id="map-container-google" class="z-depth-1-half map-container" style="height: 500px; z-index: -1;" >
+    <p>
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9954.574544628409!2d-34.95403645991403!3d-8.052890506100583!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x7ab1966d409d415%3A0x497df2e2ee00ea52!2sUniversidade+Federal+de+Pernambuco+UFPE!5e0!3m2!1spt-BR!2sbr!4v1558949559126!5m2!1spt-BR!2sbr" frameborder="0" style="border:0" allowfullscreen></iframe></p>
+</div>
+</div>
+
+
