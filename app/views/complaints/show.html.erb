@@ -29,6 +29,8 @@
 
 <p><%= @complaint.like.count %> <%= (@complaint.like.count) == 1 ? 'Like' : 'Likes'%></p>
 
+<%= render 'comments/form' %>
+
 <% pre_like = @complaint.like.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
   <%= button_to 'Unlike', complaint_like_path(@complaint, pre_like), method: :delete %>

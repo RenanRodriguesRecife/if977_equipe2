@@ -15,17 +15,6 @@ ActiveRecord::Schema.define(version: 20190527232251) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "comments", force: :cascade do |t|
-    t.text     "description"
-    t.datetime "data"
-    t.integer  "complaint_id"
-    t.integer  "person_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-    t.index ["complaint_id"], name: "index_comments_on_complaint_id", using: :btree
-    t.index ["person_id"], name: "index_comments_on_person_id", using: :btree
-  end
-
   create_table "complaints", force: :cascade do |t|
     t.text     "description"
     t.float    "latitude"
