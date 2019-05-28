@@ -1,7 +1,29 @@
 <p> Comentarios: </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col"> Usuario </th>
+            <th scope="col"> Data </th>
+            <th scope="col"> Comentario </th>
+            <th scope="col"> Opcoes </th>
+            <th colspan="3"></th>
+        </tr>
+    </thead>
+    <tbody>
 <% @comments.each do |comment| %>
-    <p><b><%= comment.user.email %></b>: <%= comment.content %> | <%= comment.created_at %></p>
-    <%= link_to 'Deletar comentario', [comment.complaint, comment], method: :delete %>
+    <tr>
+        <th colspan="3" scope="row"></th>
+        <td><b><%= comment.user.email %></b></td>
+        <td><%= comment.created_at %></td>
+        <td><%= comment.content %></td>
+        <td>
+        <%= if current_user == comment.user %>
+            <%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment) %> &nbsp;
+            <%= link_to 'Deletar', [comment.complaint, comment], method: :delete %>
+        <% end %>
+        </td>
+    </tr>
 <% end %>
-
+    </tbody>
+</table>
 <%= render 'comments/form' %>

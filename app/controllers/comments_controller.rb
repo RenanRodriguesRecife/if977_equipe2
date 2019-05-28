@@ -13,6 +13,14 @@ class CommentsController < ApplicationController
         end
     end
     
+    def update
+        if @comment.update(params[:comment].permit(:content))
+            redirect_to complaint_path(@complaint)
+        else
+            render 'edit'
+        end
+    end
+    
     def destroy
         @comment.destroy
         redirect_to complaint_path(@complaint)
