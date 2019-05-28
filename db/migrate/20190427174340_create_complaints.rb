@@ -5,7 +5,7 @@ class CreateComplaints < ActiveRecord::Migration[5.0]
       t.float :latitude
       t.float :longitude
       t.datetime :date
-      t.references :person
+      t.references :user
       
       t.timestamps
     end

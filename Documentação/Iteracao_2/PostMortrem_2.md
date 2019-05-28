@@ -5,7 +5,8 @@
   * Pedro Henrique Alves Cruz;
   * Matheus Andrade Gomes;
   * Renan Stephano Barbosa de Souza Rodrigues;
-  * Antonio Almeida da Silva Neto;
+  * Antonio Almeida da Silva Neto
+
 ## Objetivos
 * Continuação do desenvolvimento e finalização de atividades do Sprint 2.
 ## Planejamento da Iteração 2
@@ -27,7 +28,6 @@
 | Criação do CRUD | Time |
 | Criação de tela de login | Time |
 | Criação de tela Inicial | Renan |
-
 ## Não realizadas na Iteração 2
 | Ação | Responsável(eis) |
 |----------|----------|
@@ -44,6 +44,5 @@
 | Criação do ranking | Matheus |
 | Implementação de curtidas | Pedro |
 | Implementação de comentários | Antonio |
-
 ## Lições Aprendidas
-* Fazer mais reuniões e melhorar comunicação com o time
+* É necessário utilização de mais reuniões, encontros para fazer "mini Hackatons" do projeto e estudar mais.
