@@ -1,6 +1,7 @@
 <p> Comentarios: </p>
 <% @comments.each do |comment| %>
     <p><b><%= comment.user.email %></b>: <%= comment.content %> | <%= comment.created_at %></p>
+    <%= link_to 'Deletar comentario', [comment.complaint, comment], method: :delete %>
 <% end %>
 
 <%= render 'comments/form' %>
