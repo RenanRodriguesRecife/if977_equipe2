@@ -1,5 +1,18 @@
 <p id="notice"><%= notice %></p>
-
+<nav class="navbar navbar-inverse">
+    <ul class="nav navbar-nav navbar-left">
+        <li>
+            <%= button_to 'Voltar', complaints_path, method: :get, class: 'btn btn-primary' %>
+        </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        <li>
+            <% if current_user == @complaint.user %>
+                <%= link_to 'Editar', edit_complaint_path(@complaint), class: 'btn btn-warning' %>
+            <% end %>
+        </li>
+    </ul>
+</nav>
 <p>
   <strong>Description:</strong>
   <%= @complaint.description %>
@@ -31,12 +44,9 @@
 
 <% pre_like = @complaint.like.find { |like| like.user_id == current_user.id} %>
 <% if pre_like %>
-  <%= button_to 'Unlike', complaint_like_path(@complaint, pre_like), method: :delete %>
+  <%= button_to 'Unlike', complaint_like_path(@complaint, pre_like), method: :delete, class: 'btn btn-danger' %>
 <% else %>
-  <%= button_to 'Like', complaint_likes_path(@complaint), method: :complaint %>
+  <%= button_to 'Like', complaint_likes_path(@complaint), method: :complaint, class: 'btn btn-success' %>
 <% end %>
 
 <%= render 'comments/comment' %>
-
-<%= link_to 'Edit', edit_complaint_path(@complaint) %> |
-<%= link_to 'Back', complaints_path %>
