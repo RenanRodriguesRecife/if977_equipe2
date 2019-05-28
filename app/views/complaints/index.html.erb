@@ -1,4 +1,4 @@
-
+# encoding: utf-8
 
 <div class="container">
 <h3>Em Alta</h3>
@@ -45,12 +45,13 @@
       <td><%= link_to 'Show', complaint %></td>
       <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
       <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td> <!-- Botão para acionar modal -->
+      <td> <!-- Botao para acionar modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
             Modal 
         </button></td>
       <td> 
-        <button type="button" class="btn btn-danger">Curtir</button></td>
+        <p><%= complaint.like.count %> <%= (complaint.like.count) == 1 ? 'Like' : 'Likes'%></p>
+        
     </tr>
     
     
@@ -61,7 +62,7 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Título do modal</h5>
+        <h5 class="modal-title" id="exampleModalLabel">Titulo do modal</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
           <span aria-hidden="true">&times;</span>
         </button>
@@ -72,7 +73,7 @@
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Salvar mudanças</button>
+        <button type="button" class="btn btn-primary">Salvar mudancas</button>
       </div>
     </div>
   </div>
