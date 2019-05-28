@@ -1,0 +1,6 @@
+<p> Comentarios: </p>
+<% @comments.each do |comment| %>
+    <p><b><%= comment.user.email %></b>: <%= comment.content %> | <%= comment.created_at %></p>
+<% end %>
+
+<%= render 'comments/form' %>

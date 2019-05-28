@@ -1,0 +1,4 @@
+<%= form_for([@complaint, @complaint.comment.build]) do |f| %>
+    <%= f.text_area :content %>
+    <%= f.submit 'Comentar' %>
+<% end %>
