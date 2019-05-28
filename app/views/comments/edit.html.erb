@@ -1,4 +1,8 @@
 <%= form_for([@complaint, @comment]) do |f| %>
-    <%= f.text_area :content %>
-    <%= f.submit 'Comentar' %>
+    <hr>
+    <div class="form-group shadow-textarea">
+        <%= f.text_area :content, class: 'form-control', id: 'comment_area', rows: '3', placeholder: 'Escreva seu comentario...' %>
+    </div>
+    <br>
+    <%= f.submit 'Comentar', class: 'btn btn-primary' %>
 <% end %>

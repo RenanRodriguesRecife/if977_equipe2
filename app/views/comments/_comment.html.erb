@@ -1,25 +1,26 @@
+<h2> Essa reclamacao tem <%= pluralize(@comments.count, "comentarios") %> </h2>
 <p> Comentarios: </p>
 <table class="table">
     <thead>
         <tr>
+            <th colspan="0"></th>
             <th scope="col"> Usuario </th>
-            <th scope="col"> Data </th>
             <th scope="col"> Comentario </th>
+            <th scope="col"> Data </th>
             <th scope="col"> Opcoes </th>
-            <th colspan="3"></th>
         </tr>
     </thead>
     <tbody>
 <% @comments.each do |comment| %>
     <tr>
-        <th colspan="3" scope="row"></th>
+        <th colspan="0" scope="row"></th>
         <td><b><%= comment.user.email %></b></td>
-        <td><%= comment.created_at %></td>
         <td><%= comment.content %></td>
+        <td><%= comment.created_at %></td>
         <td>
-        <%= if current_user == comment.user %>
-            <%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment) %> &nbsp;
-            <%= link_to 'Deletar', [comment.complaint, comment], method: :delete %>
+        <% if current_user == comment.user %>
+            <%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment), class: 'btn btn-warning' %> &nbsp;
+            <%= button_to 'Deletar', [comment.complaint, comment], method: :delete, class: 'btn btn-danger'%>
         <% end %>
         </td>
     </tr>

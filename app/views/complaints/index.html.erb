@@ -26,29 +26,32 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">id</th>
       <th scope="col">Description</th>
       <th scope="col">Latitude</th>
       <th scope="col">Longitude</th>
       <th scope="col">Date</th>
-      <th colspan="3"></th>
+      <th scope="col">Options</th>
+      <th scope="col">Likes</th>
     </tr>
   </thead>
   <tbody>
   <% @complaints.each do |complaint| %>
     <tr>
-      <th scope="row"></th>
+
       <td><%= complaint.description %></td>
       <td><%= complaint.latitude %></td>
       <td><%= complaint.longitude %></td>
       <td><%= complaint.date %></td>
-      <td><%= link_to 'Show', complaint %></td>
-      <td><%= link_to 'Edit', edit_complaint_path(complaint) %></td>
-      <td><%= link_to 'Destroy', complaint, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      <td> <!-- Botao para acionar modal -->
+      <td><%= link_to 'Show', complaint, class: 'btn btn-primary' %>
+      <% if current_user == complaint.user %>
+      <%= link_to 'Edit', edit_complaint_path(complaint), class: 'btn btn-warning' %>
+      <%= link_to 'Destroy', complaint, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% end %>
+       <!-- Botao para acionar modal -->
         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
             Modal 
-        </button></td>
+        </button>
+      </td>
       <td> 
         <p><%= complaint.like.count %> <%= (complaint.like.count) == 1 ? 'Like' : 'Likes'%></p>
         
@@ -58,6 +61,7 @@
     
 
 <!-- Modal -->
+
 <div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content">
@@ -81,13 +85,9 @@
    <% end %>
   </tbody>
 </table>
+<div class="position-relative" width="100%">
+    <%= link_to 'Reclame Aqui', new_complaint_path, class: 'btn btn-success' %>
 </div>
-
-
-<div class="position-fixed">
-<button type="button" class="btn btn-success">
-<%= link_to 'Reclame Aqui', new_complaint_path %>
-</button>
 </div>
 
 

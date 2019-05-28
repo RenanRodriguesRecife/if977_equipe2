@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
     before_action :find_complaint
-    before_action :find_comment, only: [:destroy]
+    before_action :find_comment, only: [:destroy, :edit, :update, :comment_owner]
+    before_action :comment_owner, only: [:destroy, :edit, :update]
     
     def create
         @comment = @complaint.comment.create(params[:comment].permit(:content))
@@ -34,4 +35,12 @@ class CommentsController < ApplicationController
     def find_comment
         @comment = @complaint.comment.find(params[:id])
     end
+    
+    def comment_owner
+        unless current_user.id == @comment.user_id
+            flash[:notice] = "Você não pode accessar"
+            redirect_to @complaint
+        end
+    end
+    
 end
