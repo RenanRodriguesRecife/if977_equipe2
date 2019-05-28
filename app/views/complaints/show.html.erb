@@ -36,5 +36,7 @@
   <%= button_to 'Like', complaint_likes_path(@complaint), method: :complaint %>
 <% end %>
 
+<%= render 'comments/comment' %>
+
 <%= link_to 'Edit', edit_complaint_path(@complaint) %> |
 <%= link_to 'Back', complaints_path %>

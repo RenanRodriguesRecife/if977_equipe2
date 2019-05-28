@@ -11,6 +11,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/1
   # GET /complaints/1.json
   def show
+    @comments = Comment.where(complaint_id: @complaint).order("created_at DESC")
   end
 
   # GET /complaints/new
