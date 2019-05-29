@@ -51,7 +51,8 @@ s<!DOCTYPE html>
         <ul class="navbar-nav ml-auto ">
           <% if current_user == nil %>
             <li class="nav-item">
-                <%= link_to 'Entrar', new_user_session_path, class: 'btn btn-warning' %> 
+                <form class="form-inline">
+                    <%= link_to 'Entrar', new_user_session_path, class: 'btn btn-warning' %> 
             </li>
             <li class="nav-item" >
                 <%= link_to 'Cadastrar', new_user_registration_path, class: 'btn btn-primary' %>
