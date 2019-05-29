@@ -2,7 +2,6 @@
   <% if complaint.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
-
       <ul>
       <% complaint.errors.full_messages.each do |message| %>
         <li><%= message %></li>
@@ -12,12 +11,22 @@
   <% end %>
 
   <div class="field">
+    <%= f.label 'Titulo' %>
+    <%= f.text_field :title %>
+  </div>
+  
+  <div class="field">
+    <%= f.label 'Local' %>
+    <%= f.text_field :name %>
+  </div>
+  
+  <div class="field">
     <%= f.label :description %>
     <%= f.text_area :description %>
   </div>
   
   <div class="field">
-    <%= f.label :photo %>
+    <%= f.label 'Foto' %>
     <%= f.file_field :photo %>
   </div>
 
@@ -32,7 +41,7 @@
   </div>
 
   <div class="field">
-    <%= f.label :date %>
+    <%= f.label 'Data' %>
     <%= f.datetime_select :date %>
   </div>
 
