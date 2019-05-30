@@ -1,3 +1,5 @@
+<div class="container">
+<div class="w-50 p-3">
 <p> <strong>Nome:</strong> <%= full_name %> </p>
 <p> <strong>Email:</strong> <%= @user.email %> </p>
 <p>
@@ -5,6 +7,19 @@
   <%= image_tag @user.user_photo %>
 </p>
 <p> <strong>Reclamacoes:</strong></p>
+<table class="table">
 <% @user_complaints.each do |comp| %>
-    <p> [ <%= link_to comp.description, complaint_path(comp) %> ] <p>
+    <thead>
+        <tr> 
+            <th scope="col">Reclamações</th> 
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td><%= link_to(raw("#{comp.title}<span class='badge'>#{comp.like.count}</span>"), complaint_path(comp), class: 'btn btn-info') %></td>
+        </tr>
+    </tbody>
 <% end %>
+</table>
+</div>
+</div>
