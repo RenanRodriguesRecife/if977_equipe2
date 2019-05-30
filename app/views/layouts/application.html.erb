@@ -55,17 +55,18 @@ s<!DOCTYPE html>
         </ul>
       </div>
   </nav>
-
  </head>
 
   <body>
   
-   
-  
-  
-  
-   <p class="notice"><%= notice %></p>
-   <p class="alert"><%= alert %></p>    
+    <br />
+    <br />
+    <br />
+    
+    <% if alert != nil and alert != '' %>
+        <div class="alert alert-warning alert-dismissible fade show" role="alert"><strong></strong><%= alert %><button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></div>
+    <% end %>
+    
     <%= yield %>
 
   </body>
