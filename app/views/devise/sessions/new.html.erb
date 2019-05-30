@@ -1,5 +1,4 @@
 <div class="container">
-<form class="form-group">
 <h2 class="w-25 p-3">Entrar</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,18 +16,21 @@
             <%= f.password_field :password, autocomplete: "current-password", class: 'form-control' %>
         </div>
 
-    <% if devise_mapping.rememberable? %>
-        <div class="custom-control custom-checkbox">
-            <%= f.check_box :remember_me, id: 'remembercheck', class: 'custom-control-input' %>
-            <%= f.label :remember_me, class: 'custom-control-label', for: 'remembercheck' %> 
-        </div>
-    <% end %>
+        <% if devise_mapping.rememberable? %>
+            <div class="custom-control custom-checkbox">
+                <%= f.check_box :remember_me, id: 'remembercheck', class: 'custom-control-input' %>
+                <%= f.label :remember_me, class: 'custom-control-label', for: 'remembercheck' %> 
+            </div>
+        <% end %>
 
         <br />
+    </div>
+    <div class="actions w-50 p-3">
         <%= f.submit "Entrar", class: 'btn btn-success' %>
-    <% end %>
+    </div>
+<% end %>
     <hr />
+    <div class="w-50 p-3">
     <%= render "devise/shared/links" %>
     </div>
-</form>
 </div>
