@@ -1,44 +1,68 @@
-<h2>Sign up</h2>
+<div class="container">
+<h2 class="w-25 p-3">Registrar</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+<%= render "devise/shared/error_messages", resource: resource %>
+<form class="form-group">
+    <div class="field w-50 p-3">
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Primeiro Nome</span>
+            </div>
+            <%= f.text_field :first_name, autofocus: true, class: 'form-control' %>
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Ultimo Nome</span>
+            </div>
+            <%= f.text_field :last_name, class: 'form-control' %>
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
+            </div>
+            <%= f.text_field :email, autocomplete: 'email', class: 'form-control' %>
+        </div>
+        
+        <% if @minimum_password_length %>
+            <em>(<%= @minimum_password_length %> characters minimum)</em>
+        <% end %><br />
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Senha</span>
+            </div>
+            <%= f.password_field :password, class: 'form-control' %><br />
+        </div>
+        
+        <div class="input-group mb-3">
+            <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-default">Confirmar Senha</span>
+            </div>
+            <%= f.password_field :password_confirmation, class: 'form-control' %>
+        </div>
+        
+        <!-- <span class="btn btn-primary"> -->
+            <laber for="input_foto"></label>
+            <label class="btn btn-info fileContainer" id="input_foto">
+                Escolher Foto
+                <%= f.file_field :user_photo, class: 'fileContainer', id: 'avatar-upload' %>
+            </label>
+            <div class="upload-preview img">
+                <img id="img_prev" width='300' height='300' src="#" alt="Sua Imagem" class="img-thumbnail hidden"/> <br/>
+            </div>
 
-  <div class="field">
-    <%= f.label :first_name %><br />
-    <%= f.text_field :first_name, autofocus: true %>
-  </div>
-
-  <div class="field">
-    <%= f.label :last_name %><br />
-    <%= f.text_field :last_name %>
-  </div>
-
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autocomplete: "email" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
-
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :user_photo %>
-    <%= f.file_field :user_photo %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
+            
+        <!-- </span> -->
+        <br />
+    
+    <div class="actions">
+        <%= f.submit "Registrar", class: 'btn btn-primary' %>
+    </div>
 <% end %>
-
+<hr />
 <%= render "devise/shared/links" %>
+    </div>
+</form>
+</div>

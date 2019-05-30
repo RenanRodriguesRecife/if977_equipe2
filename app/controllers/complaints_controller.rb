@@ -30,10 +30,10 @@ class ComplaintsController < ApplicationController
 
     respond_to do |format|
       if @complaint.save
-        format.html { redirect_to @complaint, notice: 'Complaint was successfully created.' }
+        format.html { redirect_to @complaint, notice: 'Reclamação criado com sucesso.' }
         format.json { render :show, status: :created, location: @complaint }
       else
-        format.html { render :new }
+        format.html { render :new, error: 'Não foi possivel criar a reclamação' }
         format.json { render json: @complaint.errors, status: :unprocessable_entity }
 
       end
@@ -45,7 +45,7 @@ class ComplaintsController < ApplicationController
   def update
     respond_to do |format|
       if @complaint.update(complaint_params)
-        format.html { redirect_to @complaint, notice: 'Complaint was successfully updated.' }
+        format.html { redirect_to @complaint, notice: 'Reclamação atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @complaint }
       else
         format.html { render :edit }
@@ -59,7 +59,7 @@ class ComplaintsController < ApplicationController
   def destroy
     @complaint.destroy
     respond_to do |format|
-      format.html { redirect_to complaints_url, notice: 'Complaint was successfully destroyed.' }
+      format.html { redirect_to complaints_url, notice: 'Reclamação deletada.' }
       format.json { head :no_content }
     end
   end

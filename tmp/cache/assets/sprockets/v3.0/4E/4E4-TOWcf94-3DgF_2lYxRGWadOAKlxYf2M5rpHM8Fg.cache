@@ -1,0 +1,9 @@
+I"‘(function() {
+  $(document).ready(function() {
+    return $('.datetimepicker').datetimepicker({
+      locale: 'pt'
+    });
+  });
+
+}).call(this);
+:ET

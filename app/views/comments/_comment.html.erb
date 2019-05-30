@@ -19,9 +19,12 @@
         <td><%= comment.created_at %></td>
         <td>
         <% if current_user == comment.user %>
-            <%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment), class: 'btn btn-warning' %> &nbsp;
-            <%= button_to 'Deletar', [comment.complaint, comment], method: :delete, class: 'btn btn-danger'%>
+        <form class="form-inline">
+                <%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment), class: 'btn btn-warning' %> &nbsp;
+                <%= button_to 'Deletar', [comment.complaint, comment], method: :delete, class: 'btn btn-danger'%>
+        </form>
         <% end %>
+        
         </td>
     </tr>
 <% end %>

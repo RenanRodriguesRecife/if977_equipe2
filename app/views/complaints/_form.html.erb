@@ -1,42 +1,70 @@
-<%= form_for(complaint) do |f| %>
-  <% if complaint.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+        <%= form_for(complaint) do |f| %>
+            <% if complaint.errors.any? %>
+                <div id="error_explanation">
+                    <h2><%= pluralize(complaint.errors.count, "error") %> prohibited this complaint from being saved:</h2>
+                    <ul>
+                        <% complaint.errors.full_messages.each do |message| %>
+                            <li><%= message %></li>
+                        <% end %>
+                    </ul>
+                </div>
+            <% end %>
 
-      <ul>
-      <% complaint.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_area :description %>
-  </div>
-  
-  <div class="field">
-    <%= f.label :photo %>
-    <%= f.file_field :photo %>
-  </div>
-
-  <div class="field">
-    <%= f.label :latitude %>
-    <%= f.text_field :latitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :longitude %>
-    <%= f.text_field :longitude %>
-  </div>
-
-  <div class="field">
-    <%= f.label :date %>
-    <%= f.datetime_select :date %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+            <div class="field">
+      
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+                    </div>
+                    <%= f.text_field :title, autofocus: true, class: 'form-control' %>
+                </div>
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" id="inputGroup-sizing-default">Local</span>
+                    </div>
+                    <%= f.text_field :name, class: 'form-control' %>
+                </div>  
+                
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Descrição</span>
+                    </div>
+                    <%= f.text_area :description, class: 'form-control' %>
+                </div>
+            
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Latitude</span>
+                    </div>
+                    <%= f.text_field :latitude, class: 'form-control' %>
+                </div>
+                    
+                <div class="input-group mb-3">
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">Longitude</span>
+                    </div>
+                    <%= f.text_field :longitude, class: 'form-control' %>
+                </div>
+        
+                <div class="mb-3">
+                    <%= f.label 'Data' %>
+                    <%= f.datetime_select :date %>
+                </div>
+                        
+                <laber for="input_foto"></label>
+                <label class="btn btn-info fileContainer mb-3" id="input_foto">
+                    Escolher Foto
+                    <%= f.file_field :photo, class: 'fileContainer', id: 'avatar-upload' %>
+                </label>
+                <div class="upload-preview img">
+                    <img id="img_prev" width='300' height='300' src="#" alt="Sua Imagem" class="img-thumbnail hidden"/> <br/>
+                </div>
+                
+                <br />
+        
+                <div class="actions">
+                    <%= f.submit 'Criar Reclamação' , class: 'btn btn-success' %>
+                </div>
+        <% end %>
+            </div>
