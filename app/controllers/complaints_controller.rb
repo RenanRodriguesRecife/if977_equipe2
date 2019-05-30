@@ -1,11 +1,18 @@
+# encoding: UTF-8
+
 class ComplaintsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
+  before_action :find_owner, only: [:show]
 
   # GET /complaints
   # GET /complaints.json
   def index
     @complaints = Complaint.all
+  end
+  
+  def find_owner
+    @user = @complaint.user
   end
 
   # GET /complaints/1
