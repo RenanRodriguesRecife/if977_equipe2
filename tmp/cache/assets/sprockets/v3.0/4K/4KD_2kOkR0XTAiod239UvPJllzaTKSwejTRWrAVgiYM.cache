@@ -1,0 +1,7 @@
+I"|(function() {
+  $(document).ready(function() {
+    return $('.datetimepicker').datetimepicker();
+  });
+
+}).call(this);
+:ET

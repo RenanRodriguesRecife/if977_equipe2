@@ -1,9 +1,7 @@
-<div class="container">
-<h2 class="w-25 p-3">Log in</h2>
+<h2 class="w-25 p-3">Entrar</h2>
 
 <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-<div class="form-group">
-    <div class="field 3">
+    <div class="field w-50 p-3">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <span class="input-group-text" id="inputGroup-sizing-default">Email</span>
@@ -25,9 +23,8 @@
     <% end %>
 
         <br />
-        <%= f.submit "Log in", class: 'btn btn-success' %>
-    </div>
+        <%= f.submit "Entrar", class: 'btn btn-success' %>
     <% end %>
     <hr />
     <%= render "devise/shared/links" %>
-</div>
+    </div>

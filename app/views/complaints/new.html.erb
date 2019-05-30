@@ -1,9 +1,13 @@
-<body class="text-center">
-    <form class="form-signin">
-<h1 class="h3 mb-3 font-weight-normal">Nova Reclamação</h1>
-
-<%= render 'form', complaint: @complaint %>
-
-<%= link_to 'Back', complaints_path, class: 'btn btn-primary' %>
+<div class="container">
+    <form class="form-group">
+        <h3 class="w-25 p-3">Nova Reclamação</h3>
+        <div class="w-50 p-3">
+    
+            <%= render 'form', complaint: @complaint %>
+    
+            <br />
+    
+            <%= link_to 'Back', complaints_path, class: 'btn btn-primary' %>
+        </div>
     </form>
-</body>
+</div>
