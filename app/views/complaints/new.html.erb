@@ -1,13 +1,10 @@
 <div class="container">
-    <form class="form-group">
-        <h3 class="w-25 p-3">Nova Reclamação</h3>
-        <div class="w-50 p-3">
+    <h3 class="w-25 p-3">Nova Reclamação</h3>
     
-            <%= render 'form', complaint: @complaint %>
+    <%= render 'form', complaint: @complaint %>
     
-            <br />
-    
-            <%= link_to 'Back', complaints_path, class: 'btn btn-primary' %>
-        </div>
-    </form>
+    <br />
+    <div class="w-50 p-3">
+        <%= link_to 'Back', complaints_path, class: 'btn btn-primary' %>
+    </div>
 </div>
