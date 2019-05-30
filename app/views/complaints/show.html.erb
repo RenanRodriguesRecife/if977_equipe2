@@ -14,6 +14,19 @@
             </li>
         </ul>
     </nav>
+    
+    <br />
+    
+    <p>
+        <strong>Titulo</strong>
+        <%= @complaint.title %>
+    </p>
+    
+    <p>
+        <strong>Local:</strong>
+        <%= @complaint.name %>
+    </p>
+    
     <p>
         <strong>Description:</strong>
         <%= @complaint.description %>
@@ -37,6 +50,10 @@
     <p>
         <strong>Date:</strong>
         <%= @complaint.date %>
+    </p>
+    
+    <p>
+        <strong> Criado por: </strong> <%= link_to @user.first_name, '/users/'+@user.id.to_s %>
     </p>
     
     <p>

@@ -26,19 +26,18 @@
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">Description</th>
+      <th scope="col">Titulo</th>
       <th scope="col">Latitude</th>
       <th scope="col">Longitude</th>
       <th scope="col">Date</th>
-      <th scope="col">Options</th>
-      <th scope="col">Likes</th>
+      <th scope="col">Opcoes</th>
+      <th scope="col">Cutidas</th>
     </tr>
   </thead>
   <tbody>
   <% @complaints.each do |complaint| %>
     <tr>
-
-      <td><%= complaint.description %></td>
+      <td><%= complaint.title %></td>
       <td><%= complaint.latitude %></td>
       <td><%= complaint.longitude %></td>
       <td><%= complaint.date %></td>

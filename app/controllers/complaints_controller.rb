@@ -1,11 +1,18 @@
+# encoding: UTF-8
+
 class ComplaintsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_complaint, only: [:show, :edit, :update, :destroy]
+  before_action :find_owner, only: [:show]
 
   # GET /complaints
   # GET /complaints.json
   def index
     @complaints = Complaint.all
+  end
+  
+  def find_owner
+    @user = @complaint.user
   end
 
   # GET /complaints/1
@@ -72,6 +79,6 @@ class ComplaintsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def complaint_params
-      params.require(:complaint).permit(:description, :photo, :latitude, :longitude, :date)
+      params.require(:complaint).permit(:title, :name, :description, :photo, :latitude, :longitude, :date)
     end
 end
