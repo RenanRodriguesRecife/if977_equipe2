@@ -5,7 +5,7 @@ class Complaint < ApplicationRecord
   mount_uploader :photo, LocationPhotoUploader
   
   def self.search(search)
-        where("title LIKE ?", "%#{search}%")
+        where("lower(title) LIKE ?", "%#{search.downcase}%")
   end
   
 end
