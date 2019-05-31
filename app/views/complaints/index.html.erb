@@ -20,9 +20,21 @@
 </div>
 
 
-
+<%= form_tag(complaints_path, :method => "get", id: "search-form") do %>
 <div class="container">
 <h3>Ultimas</h3>
+<div class="form-inline">
+<div class="input-group mb-3">
+    <div class="input-group-prepend">
+        <span class="input-group-text" id="inputGroup-sizing-default">Titulo</span>
+    </div>
+    <%= text_field_tag :search, params[:search], placeholder: 'Procurar reclamacao', class: 'form-control' %>
+</div>
+<div class="mb-3">
+<%= submit_tag 'Procurar', class: 'btn btn-info' %>
+<% end %>
+</div>
+</div>
 <table class="table">
   <thead>
     <tr>

@@ -7,8 +7,18 @@ class ComplaintsController < ApplicationController
 
   # GET /complaints
   # GET /complaints.json
+  
+  #def index
+  #  @complaints = Complaint.all
+  #end
+  
   def index
     @complaints = Complaint.all
+    if params[:search]
+      @complaints = Complaint.search(params[:search]).order("created_at DESC")
+    else
+      @complaints = Complaint.all.order('created_at DESC')
+    end
   end
   
   def find_owner
