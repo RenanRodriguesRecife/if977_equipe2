@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-
+    before_action :authenticate_user!
     before_action :find_complaint
     before_action :find_like, only: [:destroy]
     
