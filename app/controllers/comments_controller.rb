@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+    before_action :authenticate_user!
     before_action :find_complaint
     before_action :find_comment, only: [:destroy, :edit, :update, :comment_owner]
     before_action :comment_owner, only: [:destroy, :edit, :update]
