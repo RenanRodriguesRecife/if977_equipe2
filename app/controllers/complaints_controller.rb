@@ -12,6 +12,26 @@ class ComplaintsController < ApplicationController
   #  @complaints = Complaint.all
   #end
   
+  #Add load_routers and replaced index with the code below
+  def load_locations
+    @complaints_default = Gmaps4rails.build_markers(@complaints) do |plot, marker|  
+       marker.lat plot.latitude  
+       marker.lng plot.longitude  
+
+       @ip = "192.168."+rand(0..255).to_s+"."+rand(15..250).to_s  
+       @connected = rand(50..100)  
+
+       marker.picture({   
+         "width" => 35,  
+         "height" => 30  
+       })  
+ 
+       marker.infowindow render_to_string(:partial => "/complaints/info",   
+         :locals => {:name => plot.name.force_encoding("UTF-8"), :date => rand(6.months.ago..Time.now), :ip => @ip, :connected => @connected })  
+    end  
+  end
+
+  
   def index
     @complaints = Complaint.all
     if params[:search]
@@ -19,6 +39,7 @@ class ComplaintsController < ApplicationController
     else
       @complaints = Complaint.all.order('created_at DESC')
     end
+    load_locations
   end
   
   def find_owner
@@ -47,10 +68,10 @@ class ComplaintsController < ApplicationController
 
     respond_to do |format|
       if @complaint.save
-        format.html { redirect_to @complaint, notice: 'Reclamação criado com sucesso.' }
+        format.html { redirect_to @complaint, notice: 'Reclamacao criado com sucesso.' }
         format.json { render :show, status: :created, location: @complaint }
       else
-        format.html { render :new, error: 'Não foi possivel criar a reclamação' }
+        format.html { render :new, error: 'Nao foi possivel criar a reclamacao' }
         format.json { render json: @complaint.errors, status: :unprocessable_entity }
 
       end
@@ -62,7 +83,7 @@ class ComplaintsController < ApplicationController
   def update
     respond_to do |format|
       if @complaint.update(complaint_params)
-        format.html { redirect_to @complaint, notice: 'Reclamação atualizada com sucesso.' }
+        format.html { redirect_to @complaint, notice: 'Reclamacao atualizada com sucesso.' }
         format.json { render :show, status: :ok, location: @complaint }
       else
         format.html { render :edit }
@@ -76,7 +97,7 @@ class ComplaintsController < ApplicationController
   def destroy
     @complaint.destroy
     respond_to do |format|
-      format.html { redirect_to complaints_url, notice: 'Reclamação deletada.' }
+      format.html { redirect_to complaints_url, notice: 'Reclamacao deletada.' }
       format.json { head :no_content }
     end
   end

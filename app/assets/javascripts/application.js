@@ -15,6 +15,8 @@
 //= require turbolinks
 //= require_tree .
 
+//= require gmaps/google
+
 //= require jquery3
 //= require popper
 //= require bootstrap
@@ -37,4 +39,12 @@ $(function() {
     $('#img_prev').removeClass('hidden');
     readURL(this);
   });
+});
+
+
+handler = Gmaps.build('Google');  
+handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){  
+    markers = handler.addMarkers(<%= raw @complaints_default.to_json %>);  
+    handler.bounds.extendWith(markers);  
+    handler.fitMapToBounds();  
 });

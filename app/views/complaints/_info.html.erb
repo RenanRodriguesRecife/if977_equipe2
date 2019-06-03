@@ -1,0 +1,20 @@
+#File to create    
+#MyApp/app/views/routers/_info.html.erb
+
+<style type="text/css">    
+ #low     { color: red;     }  
+ #medium  { color: orange;  }  
+ #high    { color: green;   }  
+</style>    
+
+    <b>Name:</b> <%= name %><br>  
+
+    <% if @status == 1 %>  
+        <b>Status:</b> <span id="high">System Normal</span><br>  
+    <% elsif @status == 2 %>  
+        <b>Status:</b> <span id="medium">High Network Traffic</span><br>  
+    <% elsif @status == 3 %>  
+        <b>Status:</b> <span id="low">System Error!</span><br>  
+    <% else %>   
+        <b>Status:</b> <span id="low">High Network Traffic</span><br>  
+    <% end %>   

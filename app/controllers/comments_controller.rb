@@ -1,3 +1,5 @@
+# encoding: UTF-8
+
 class CommentsController < ApplicationController
     before_action :authenticate_user!
     before_action :find_complaint

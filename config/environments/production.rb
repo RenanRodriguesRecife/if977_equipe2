@@ -1,4 +1,8 @@
 Rails.application.configure do
+
+  Encoding.default_external = Encoding::UTF_8
+  Encoding.default_internal = Encoding::UTF_8
+
   # Settings specified here will take precedence over those in config/application.rb.
   
   # Code is not reloaded between requests.
