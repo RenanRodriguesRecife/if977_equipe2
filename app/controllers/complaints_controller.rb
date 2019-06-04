@@ -13,11 +13,12 @@ class ComplaintsController < ApplicationController
   #end
   
   #Add load_routers and replaced index with the code below
-  def load_locations
-    @complaints_default = Gmaps4rails.build_markers(@complaints) do |plot, marker|  
+  def load_locations(comp)
+    @complaints_default = Gmaps4rails.build_markers(comp) do |plot, marker|  
        marker.lat plot.latitude  
        marker.lng plot.longitude  
 
+       @description = plot.description
        @ip = "192.168."+rand(0..255).to_s+"."+rand(15..250).to_s  
        @connected = rand(50..100)  
 
@@ -39,7 +40,7 @@ class ComplaintsController < ApplicationController
     else
       @complaints = Complaint.all.order('created_at DESC')
     end
-    load_locations
+    load_locations(@complaints)
   end
   
   def find_owner
@@ -49,6 +50,7 @@ class ComplaintsController < ApplicationController
   # GET /complaints/1
   # GET /complaints/1.json
   def show
+    load_locations(@complaint)
     @comments = Comment.where(complaint_id: @complaint).order("created_at DESC")
   end
 
