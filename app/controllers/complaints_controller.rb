@@ -14,13 +14,13 @@ class ComplaintsController < ApplicationController
   
   #Add load_routers and replaced index with the code below
   def load_locations(comp)
-    @complaints_default = Gmaps4rails.build_markers(comp) do |plot, marker|  
+    @complaints_map = Gmaps4rails.build_markers(comp) do |plot, marker|  
        marker.lat plot.latitude  
        marker.lng plot.longitude  
-
-       @description = plot.description
-       @ip = "192.168."+rand(0..255).to_s+"."+rand(15..250).to_s  
-       @connected = rand(50..100)  
+       
+       @title = plot.title
+       @desc = plot.description
+       @date = plot.date
 
        marker.picture({   
          "width" => 35,  
@@ -28,7 +28,7 @@ class ComplaintsController < ApplicationController
        })  
  
        marker.infowindow render_to_string(:partial => "/complaints/info",   
-         :locals => {:name => plot.name.force_encoding("UTF-8"), :date => rand(6.months.ago..Time.now), :ip => @ip, :connected => @connected })  
+         :locals => {:name => plot.name.force_encoding("UTF-8"), :title => @title, :desc => @desc, :date => @date })  
     end  
   end
 
@@ -50,8 +50,8 @@ class ComplaintsController < ApplicationController
   # GET /complaints/1
   # GET /complaints/1.json
   def show
-    load_locations(@complaint)
     @comments = Comment.where(complaint_id: @complaint).order("created_at DESC")
+        load_locations(@complaint)
   end
 
   # GET /complaints/new
