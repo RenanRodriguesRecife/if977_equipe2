@@ -81,6 +81,8 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.1.5)
+    coolline (0.5.0)
+      unicode_utils (~> 1.4)
     crass (1.0.4)
     cucumber (3.1.2)
       builder (>= 2.1.2)
@@ -140,6 +142,11 @@ GEM
       guard (~> 2.8)
       guard-compat (~> 1.0)
       multi_json (~> 1.8)
+    guard-rspec (4.7.3)
+      guard (~> 2.1)
+      guard-compat (~> 1.1)
+      rspec (>= 2.99.0, < 4.0)
+    highline (1.7.10)
     http_parser.rb (0.6.0)
     i18n (1.6.0)
       concurrent-ruby (~> 1.0)
@@ -155,6 +162,7 @@ GEM
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
+    luks (1.0.0.beta2)
     lumberjack (1.0.13)
     mail (2.7.1)
       mini_mime (>= 0.1.1)
@@ -182,7 +190,13 @@ GEM
     pry (0.12.2)
       coderay (~> 1.1.0)
       method_source (~> 0.9.0)
+<<<<<<< HEAD
     public_suffix (3.1.0)
+=======
+    pry-coolline (0.2.5)
+      coolline (~> 0.5)
+    public_suffix (3.0.3)
+>>>>>>> master
     puma (3.12.1)
     rack (2.0.7)
     rack-test (0.6.3)
@@ -223,6 +237,10 @@ GEM
     responders (2.4.1)
       actionpack (>= 4.2.0, < 6.0)
       railties (>= 4.2.0, < 6.0)
+    rspec (3.8.0)
+      rspec-core (~> 3.8.0)
+      rspec-expectations (~> 3.8.0)
+      rspec-mocks (~> 3.8.0)
     rspec-core (3.8.0)
       rspec-support (~> 3.8.0)
     rspec-expectations (3.8.3)
@@ -239,7 +257,19 @@ GEM
       rspec-expectations (~> 3.8.0)
       rspec-mocks (~> 3.8.0)
       rspec-support (~> 3.8.0)
+    rspec-scaffold (2.0.0.beta1)
+      highline (~> 1.6)
+      luks
+      ryan (~> 1.1.0)
     rspec-support (3.8.0)
+    ruby2ruby (2.4.3)
+      ruby_parser (~> 3.1)
+      sexp_processor (~> 4.6)
+    ruby_parser (3.13.1)
+      sexp_processor (~> 4.9)
+    ryan (1.1.0)
+      ruby2ruby (~> 2.2)
+      ruby_parser (>= 3.7.0, < 4.0.0)
     sass (3.7.4)
       sass-listen (~> 4.0.0)
     sass-listen (4.0.0)
@@ -260,6 +290,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
+    sexp_processor (4.12.1)
     shellany (0.0.1)
     simple_form (3.5.1)
       actionpack (> 4, < 5.2)
@@ -286,6 +317,7 @@ GEM
       thread_safe (~> 0.1)
     uglifier (4.1.20)
       execjs (>= 0.3.0, < 3)
+    unicode_utils (1.4.0)
     warden (1.2.8)
       rack (>= 2.0.6)
     web-console (3.7.0)
@@ -315,16 +347,19 @@ DEPENDENCIES
   gmaps4rails
   guard (~> 2.14, >= 2.14.1)
   guard-livereload (~> 2.5, >= 2.5.2)
+  guard-rspec
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)
   pg (~> 0.21)
   postgresql_lo_streamer
+  pry-coolline (~> 0.2.5)
   puma (~> 3.0)
   rails (~> 5.0.1)
   rails_12factor
   rake (~> 12.3.2)
   rspec-rails
+  rspec-scaffold (~> 2.0.0.beta1)
   sass-rails (~> 5.0)
   simple_form (~> 3.5)
   spring
