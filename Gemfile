@@ -80,10 +80,13 @@ gem 'rails_12factor'
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 #login
 gem 'devise'
+gem 'pry-coolline', '~> 0.2.5'
+gem 'rspec-scaffold', '~> 2.0.0.beta1', require: false
 
 group :test do
   gem 'cucumber-rails', require: false
   gem 'rspec-rails'
+  gem 'guard-rspec', require: false
   # database_cleaner is not required, but highly recommended
   gem 'database_cleaner'
 end
