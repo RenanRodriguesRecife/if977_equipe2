@@ -1,8 +1,8 @@
 class UsersController < ApplicationController
    
     def show
-        @user = User.find(params[:id])
-        @user_complaints = @user.complaint
+        @u = User.find(params[:id])
+        @user_complaints = @u.complaint
     end
     
     def user_complaints

@@ -1,19 +1,17 @@
 <div class="container">
 <div class="w-50 p-3">
 <p> <strong>Nome:</strong> <%= full_name %> </p>
-<p> <strong>Email:</strong> <%= @user.email %> </p>
+<p> <strong>Email:</strong> <%= @u.email %> </p>
 <p>
-  <strong>Photo:</strong>
-  <%= image_tag @user.user_photo %>
+<%= image_tag @u.user_photo %>
 </p>
-<p> <strong>Reclamacoes:</strong></p>
 <table class="table">
+<thead>
+    <tr> 
+        <th scope="col">Reclamações</th> 
+    </tr>
+</thead>
 <% @user_complaints.each do |comp| %>
-    <thead>
-        <tr> 
-            <th scope="col">Reclamações</th> 
-        </tr>
-    </thead>
     <tbody>
         <tr>
             <td><%= link_to(raw("#{comp.title}<span class='badge'>#{comp.like.count}</span>"), complaint_path(comp), class: 'btn btn-info') %></td>
@@ -21,5 +19,8 @@
     </tbody>
 <% end %>
 </table>
+<% if @user_complaints.length == 0 %>
+    <p> Nenhuma reclamação feita ainda. </p>
+<% end %>
 </div>
 </div>
