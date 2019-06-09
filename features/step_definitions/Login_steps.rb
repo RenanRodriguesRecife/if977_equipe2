@@ -11,7 +11,7 @@ end
 E("a senha seja {string}") do |password|
     fill_in("user_password", :with => password)
     fill_in("user_password_confirmation", :with => password)
-    click_button("Sign up")
+    click_button("Registrar")
 end
 
 Dado("que eu navego para a pagina de login") do
