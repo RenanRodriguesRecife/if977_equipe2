@@ -1,6 +1,7 @@
 # encoding: utf-8
 
 <div class="container">
+<%= render 'ranking' %>
 <h3>Em Alta</h3>
 <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
@@ -58,41 +59,10 @@
       <%= link_to 'Edit', edit_complaint_path(complaint), class: 'btn btn-warning' %>
       <%= link_to 'Destroy', complaint, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
-       <!-- Botao para acionar modal -->
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalExemplo">
-            Modal 
-        </button>
       </td>
       <td> 
-        <p><%= complaint.like.count %> <%= (complaint.like.count) == 1 ? 'Like' : 'Likes'%></p>
-        
+        <p><%= complaint.like.count %> <%= (complaint.like.count) == 1 ? 'Like' : 'Likes'%></p>  
     </tr>
-    
-    
-    
-
-<!-- Modal -->
-
-<div class="modal fade" id="modalExemplo" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Titulo do modal</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div class="modal-body">
-        ...
-       
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-        <button type="button" class="btn btn-primary">Salvar mudancas</button>
-      </div>
-    </div>
-  </div>
-</div>
    <% end %>
   </tbody>
 </table>
