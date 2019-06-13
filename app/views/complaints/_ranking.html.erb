@@ -1,0 +1,21 @@
+    <div class="field w-50 p-3">
+        <p> Ranking </p>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Titulo</th>
+                <th scope="col">Cutidas</th>
+            </tr>
+            </thead>
+            <tbody>
+            <% @ranking.each do |comp_rank| %>
+            <tr>
+                <td><%= comp_rank.title %></td>
+                <td><%= link_to 'Show', comp_rank, class: 'btn btn-primary' %></td>
+                <td>
+                    <p><%= comp_rank.like.count %> <%= (comp_rank.like.count) == 1 ? 'Curtida' : 'Curtidas'%></p>
+                </td>
+            </tr>
+            <% end %>
+        </table>
+    </div>

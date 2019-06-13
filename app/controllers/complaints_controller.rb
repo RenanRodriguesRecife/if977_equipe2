@@ -35,6 +35,7 @@ class ComplaintsController < ApplicationController
   
   def index
     @complaints = Complaint.all
+    @ranking = Complaint.rank
     if params[:search]
       @complaints = Complaint.search(params[:search]).order("created_at DESC")
     else

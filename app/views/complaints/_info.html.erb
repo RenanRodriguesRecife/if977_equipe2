@@ -1,4 +1,4 @@
-<b>Reclamação:</b> <%= title %><br>
-<b>Local:</b> <%= name %><br>
+<b>Reclamação:</b> <%= title.force_encoding("utf-8") %><br>
+<b>Local:</b> <%= name.force_encoding("utf-8") %><br>
 <b>Data: </b> <%= date %><br>
-<b>Descrição:</b> <%= desc %><br>
+<b>Descrição:</b> <%= desc.force_encoding("utf-8") %><br>
