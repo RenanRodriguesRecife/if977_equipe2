@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190529200453) do
+ActiveRecord::Schema.define(version: 20190613191444) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -30,14 +30,13 @@ ActiveRecord::Schema.define(version: 20190529200453) do
     t.float    "latitude"
     t.float    "longitude"
     t.datetime "date"
-    t.integer  "person_id"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-    t.string   "photo"
     t.integer  "user_id"
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+    t.string   "photo"
     t.text     "name"
     t.string   "title"
-    t.index ["person_id"], name: "index_complaints_on_person_id", using: :btree
+    t.integer  "likes_count", default: 0
     t.index ["user_id"], name: "index_complaints_on_user_id", using: :btree
   end
 
@@ -67,7 +66,6 @@ ActiveRecord::Schema.define(version: 20190529200453) do
 
   add_foreign_key "comments", "complaints"
   add_foreign_key "comments", "users"
-  add_foreign_key "complaints", "users"
   add_foreign_key "likes", "complaints"
   add_foreign_key "likes", "users"
 end

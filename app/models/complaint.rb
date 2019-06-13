@@ -10,4 +10,8 @@ class Complaint < ApplicationRecord
         where("lower(title) LIKE ?", "%#{search.downcase}%")
   end
   
+  def self.rank()
+        select("*").order("likes_count DESC").order("title ASC").limit(5)
+  end
+  
 end
