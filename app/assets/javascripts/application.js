@@ -15,6 +15,7 @@
 //= require turbolinks
 //= require_tree .
 
+//= require underscore
 //= require gmaps/google
 
 //= require jquery3
@@ -40,3 +41,4 @@ $(function() {
     readURL(this);
   });
 });
+
