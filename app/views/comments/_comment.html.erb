@@ -18,9 +18,10 @@
         <td><%= comment.content %></td>
         <td><%= comment.created_at %></td>
         <td class="row">
-        <% if current_user == comment.user %>
+        <% if can? :update, comment %>
             <div class="col-md-3"><%= link_to 'Editar', edit_complaint_comment_path(comment.complaint, comment), class: 'btn btn-warning' %> &nbsp;</div>
-        <% elsif current_user == comment.user or current_user == @complaint.user %>
+        <% end %>
+        <% if can? :destroy, comment %>
             <div class="col-md-3"><%= button_to 'Deletar', [comment.complaint, comment], method: :delete, class: 'btn btn-danger'%></div>
         <% end %>        
         </td>

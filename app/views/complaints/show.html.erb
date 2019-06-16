@@ -9,8 +9,11 @@
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li>
-                <% if current_user == @complaint.user %>
+                <% if can? :update, @complaint %>
                     <%= link_to 'Editar', edit_complaint_path(@complaint), class: 'btn btn-warning' %>
+                <% end %>
+                <% if can? :destroy, @complaint %>
+                    <%= link_to 'Destroy', @complaint, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
                 <% end %>
             </li>
         </ul>
