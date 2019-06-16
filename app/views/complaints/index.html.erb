@@ -64,9 +64,11 @@
       <td><%= complaint.longitude %></td>
       <td><%= complaint.date %></td>
       <td><%= link_to 'Show', complaint, class: 'btn btn-primary' %>
-      <% if current_user == complaint.user %>
-      <%= link_to 'Edit', edit_complaint_path(complaint), class: 'btn btn-warning' %>
-      <%= link_to 'Destroy', complaint, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
+      <% if can? :update, complaint %>
+        <%= link_to 'Edit', edit_complaint_path(complaint), class: 'btn btn-warning' %>
+      <% end %>
+      <% if can? :destroy, complaint %>
+        <%= link_to 'Destroy', complaint, class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure?' } %>
       <% end %>
       </td>
       <td> 
