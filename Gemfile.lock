@@ -337,7 +337,7 @@ DEPENDENCIES
   bootstrap (~> 4.3.1)
   bulma-rails (~> 0.6.1)
   byebug
-  cancan
+  cancan (~> 1.6.10)
   carrierwave-postgresql
   coffee-rails (~> 4.2)
   cucumber-rails
