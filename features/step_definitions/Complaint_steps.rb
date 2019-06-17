@@ -2,6 +2,15 @@ Dado("que eu esteja logado") do
     visit("/users/sign_in")
 end
 
+Dado("que eu navego para a pagina inicial") do
+    visit("/complaints")
+end
+
+E("clico em Edit da relamação Dummy") do
+    visit("/complaints/3/edit")
+end
+
+
 E("seja digitado no login {string}") do |email|
     fill_in("user_email", :with => email)
     

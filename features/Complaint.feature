@@ -18,3 +18,11 @@ Cenário: Registrar todos os campos corretos e criar reclamação
     E preencho a data com "2019-06-09 20:25:00 UTC"
     Quando na tela de criação de reclamações eu clicar no botão "Criar Reclamação"
     Então devo ver na tela a mensagem "Sucesso! Reclamacao criado com sucesso."
+    
+
+Cenário: Editar reclamação
+    Dado que eu navego para a pagina inicial
+    E clico em Edit da relamação "Dummy"
+    E preencho o Título com "Rampa destruída"
+    Quando na tela de criação de reclamações eu clicar no botão "Criar Reclamação"
+    Então devo ver na tela a mensagem "Sucesso! Reclamacao atualizada com sucesso."    
