@@ -21,7 +21,7 @@
 | Login com o Google | Renan |
 | Criação do usuário Admin | Matheus |
 | Mapa clicável | Pedro |
-## Realizadas na Iteração 3
+## Realizadas na Iteração 4
 | Ação | Responsável(eis) |
 |----------|----------|
 | Criação de tela de listagem das denúncias | Pedro |
@@ -34,7 +34,7 @@
 | Profile do usuário | Pedro |
 | Procirar reclamação por título | Pedro |
 | Mapa clicável | Pedro |
-## Não realizadas na Iteração 3
+## Não realizadas na Iteração 4
 | Ação | Responsável(eis) |
 |----------|----------|
 | Login com Facebook | Pedro |
