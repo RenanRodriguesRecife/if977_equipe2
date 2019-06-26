@@ -4,7 +4,7 @@ Projeto da disciplina de Engenharia de Software (IF977), ofertada no curso de Si
 Accessible Life.    
 
 Link --> https://accessiblelife.herokuapp.com/
-
+Screencast --> https://www.screencast.com/t/Mt9Q76tW
 
 ## Descrição:
 
