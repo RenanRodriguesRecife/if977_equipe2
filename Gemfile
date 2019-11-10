@@ -46,7 +46,7 @@ gem 'postgresql_lo_streamer'
 
 
 gem 'bulma-rails', '~> 0.6.1'
-gem 'simple_form', '~> 3.5'
+gem 'simple_form', '~> 5.0'
 
 #BOOTSTRAP
 gem 'bootstrap', '~> 4.3.1'
